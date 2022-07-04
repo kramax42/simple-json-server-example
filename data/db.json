@@ -1,5 +1,5 @@
 {
-  "questions": [
+  "javascriptQuestions": [
     {
       "question": "What will be output to the console?",
       "codeExample": "for(var i = 0; i < 10; ++i) {\n    setTimeout(() => {\n        console.log(i);\n    }, 0)\n}",
@@ -299,5 +299,55 @@
       ],
       "id": 13
     }
-  ]
+  ],
+  "typescriptQuestions": [
+		{
+			"question": "Typescript question?",
+			"codeExample": "for(var i = 0; i < 10; ++i) {\n    setTimeout(() => {\n        console.log(i);\n    }, 0)\n}",
+			"answersList": [
+				{
+					"answer": "10 times number 10",
+					"isCorrect": true
+				},
+				{
+					"answer": "Numbers 0 to 9",
+					"isCorrect": false
+				},
+				{
+					"answer": "Numbers 0 to 10",
+					"isCorrect": false
+				},
+				{
+					"answer": "10 times number 9",
+					"isCorrect": false
+				}
+			],
+			"id": 1
+		}
+	],
+  "nodejsQuestions": [
+		{
+			"question": "Nodejs question?",
+			"codeExample": "for(var i = 0; i < 10; ++i) {\n    setTimeout(() => {\n        console.log(i);\n    }, 0)\n}",
+			"answersList": [
+				{
+					"answer": "10 times number 10",
+					"isCorrect": true
+				},
+				{
+					"answer": "Numbers 0 to 9",
+					"isCorrect": false
+				},
+				{
+					"answer": "Numbers 0 to 10",
+					"isCorrect": false
+				},
+				{
+					"answer": "10 times number 9",
+					"isCorrect": false
+				}
+			],
+			"id": 1
+		}
+	]
 }
