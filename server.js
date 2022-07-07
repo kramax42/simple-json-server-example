@@ -28,15 +28,15 @@ server.get(`/api/questions/:technology/size`, (req, res) => {
 // Get questions size.
 server.get(`/api/questions/sizes`, (req, res) => {
 	const dbData = router.db['__wrapped__'];
-	const questionListsSizes = {};
+	const questionsListsSizes = {};
 
 	// Fill result object with arrays sizes.
 	for (const [technology, technologyQuestions] of Object.entries(dbData)) {
 		const technologyName = technology.replace('Questions', '');
-		questionListsSizes[`${technologyName}`] = technologyQuestions.length;
+		questionsListsSizes[`${technologyName}`] = technologyQuestions.length;
 	}
 
-	res.send({ questionListsSizes });
+	res.send({ questionsListsSizes });
 });
 
 server.use(router);
