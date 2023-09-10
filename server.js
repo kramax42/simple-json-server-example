@@ -9,28 +9,24 @@ const routesRewriter = {
 	'/api/questions/nodejs': '/nodejsQuestions',
 };
 
-// Middlewares.
 server.use(middlewares);
 server.use(jsonServer.rewriter(routesRewriter));
 
-// Routes.
+
 server.get('/echo', (req, res) => {
 	res.jsonp(req.query);
 });
 
-// Get questions size.
 server.get(`/api/questions/:technology/size`, (req, res) => {
 	const questionsSize =
 		router.db['__wrapped__'][`${req.params.technology}Questions`].length;
 	res.send({ [`${req.params.technology}QuestionsSize`]: questionsSize });
 });
 
-// Get questions size.
 server.get(`/api/questions/sizes`, (req, res) => {
 	const dbData = router.db['__wrapped__'];
 	const questionsListsSizes = {};
 
-	// Fill result object with arrays sizes.
 	for (const [technology, technologyQuestions] of Object.entries(dbData)) {
 		const technologyName = technology.replace('Questions', '');
 		questionsListsSizes[`${technologyName}`] = technologyQuestions.length;
